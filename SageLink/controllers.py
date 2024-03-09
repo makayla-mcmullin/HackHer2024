@@ -68,42 +68,38 @@ from SageLink.models import *
 
 @app.route('/')
 # @authenticate
-def home(user):
+def home(ElderUser):
 
-    # some fake product data
-    products = [
-        {'name': 'prodcut 1', 'price': 10},
-        {'name': 'prodcut 2', 'price': 20}
-    ]
-    return render_template('index.html', user=user, products=products)
+    
+    return render_template('index.html', ElderUser=ElderUser,)
 
 
-@app.route('/register', methods=['GET'])
-def register_get():
-    # templates are stored in the templates folder
-    return render_template('register.html', message='')
+# @app.route('/register', methods=['GET'])
+# def register_get():
+#     # templates are stored in the templates folder
+#     return render_template('register.html', message='')
 
 
-@app.route('/register', methods=['POST'])
-def register_post():
-    email = request.form.get('email')
-    name = request.form.get('name')
-    password = request.form.get('password')
-    password2 = request.form.get('password2')
-    error_message = None
+# @app.route('/register', methods=['POST'])
+# def register_post():
+#     email = request.form.get('email')
+#     name = request.form.get('name')
+#     password = request.form.get('password')
+#     password2 = request.form.get('password2')
+#     error_message = None
 
-    if password != password2:
-        error_message = "The passwords do not match"
-    else:
-        # use backend api to register the user
-        success = register(name, email, password)
-        if not success:
-            error_message = "Registration failed."
-    # if there is any error messages when registering new user
-    # at the backend, go back to the register page.
-    if error_message:
-        return render_template('register.html', message=error_message)
-    else:
-        return redirect('/login')
+#     if password != password2:
+#         error_message = "The passwords do not match"
+#     else:
+#         # use backend api to register the user
+#         success = register(name, email, password)
+#         if not success:
+#             error_message = "Registration failed."
+#     # if there is any error messages when registering new user
+#     # at the backend, go back to the register page.
+#     if error_message:
+#         return render_template('register.html', message=error_message)
+#     else:
+#         return redirect('/login')
 
 

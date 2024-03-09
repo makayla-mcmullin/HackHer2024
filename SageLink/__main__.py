@@ -1,6 +1,6 @@
-from qbnb import app
-from qbnb.models import *
-from qbnb.controllers import *
+from SageLink import app
+from SageLink.models import *
+from SageLink.controllers import *
 
 
 """
