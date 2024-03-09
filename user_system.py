@@ -1,8 +1,4 @@
-"""
-This program establishes the user/profile system for qBnb.
 
-Last Updated: October 11, 2022
-"""
 
 import os
 from flask import Flask, render_template, request, redirect, url_for
@@ -27,10 +23,9 @@ class User(db.Model):
     balance = db.Column(db.String(10), unique=True, nullable=False)
     # Create database column for each user attribute 
 
-    listings = db.relationship('listing', backref='user')
-    bookings = db.relationship('booking', backref='user')
-    # Make realationship with listings and booking databases 
-    # TODO: ensure listing and booking databases have crresponding code
+   # listings = db.relationship('listing', backref='user')
+  #  bookings = db.relationship('booking', backref='user')
+  
 
     def __repr__(self):
         return '<User %r>' % self.username
