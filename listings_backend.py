@@ -2,24 +2,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-"""
-R4-1: The title of the product has to be alphanumeric-only, and space allowed
- only if it is not as prefix and suffix.
-R4-2: The title of the product no longer than 80 characters.
-R4-3: The description of the product can be arbitrary characters,
- with a minimum length of 20 characters and a maximum of 2000 characters.
-R4-4: Description has to be longer than the product's title.
-"""
-
-"""
-This is an incomplete sample implementation of
-some of the backend features for the listings class
-Group 21 - CISC 327
-Author: Aniket Mukherjee
-Student Number: 20245057
-Date: October 3, 2022
-"""
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
